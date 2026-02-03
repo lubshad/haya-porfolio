@@ -613,10 +613,38 @@ nav {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
-        /* Mobile menu implementation later if needed */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 5, 5, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        text-align: center;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        z-index: 1001;
+    }
+
+    .menu-toggle span {
         display: block;
+        height: 3px;
+        width: 100%;
+        background-color: var(--text-color);
+        border-radius: 3px;
+        transition: var(--transition);
     }
 }
